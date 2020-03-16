@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Animal Kingdom</title>
+    	
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="shortcut icon" type="image/ico" href="img/favicon2.ico">
+
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    	<link rel="stylesheet" type="text/css" href="css/animalkingdom.css">
+    	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script defer src="js/jquery.flexverticalcenter.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+
+	</head>
+	
+	<body>
+
+	<div class="container-fluid headerUp">
+
+	<header class="container">
+		<div class="row justify-content-between">
+			<div class="col-xs-4 logo">
+				<a href="home.html"><img class="logoRotate" src="img/timao3.png" alt="Disney Deck"><img class="logoDeck" src="img/logo.png"></a>
+			</div>	
+			<div class="col-xs-2" style="width: 35px;height: 25px;">
+				<div class="button_container" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+			</div>		
+		</div>
+	</header>
+
+	</div>
+
+	<div class="container">
+
+	<section>
+		<div class="menu">
+			<div class="row">
+				<div class="col-md-12">
+					<ul>
+						<li>
+							<a href="animalkingdom/sobreAK.html"><span class="tag sobre" id="tagSobre"><p style="line-height:50px;">Sobre</p></span>
+							<span style="line-height:50px;" class="small-tag">Sobre</span>
+							<img class="itemSobre" src="img/icon-sobreAK.png" alt="Sobre o Animal Kingdom"></a>
+						</li>
+						<li>
+							<a href="animalkingdom/mapaAK.html"><span class="tag mapa" id="tagMapa"><p style="line-height:50px;">Mapa</p></span>
+							<span style="line-height:50px;" class="small-tag">Mapa</span>
+							<img class="itemMapa" src="img/icon-mapaAK.png" alt="Mapa"></a>
+						</li>
+						<li>
+							<a href="animalkingdom/areasAK.html"><span class="tag areas" id="tagAreas"><p>Áreas e atrações</p></span>
+							<span class="small-tag">Áreas e atrações</span>
+							<img class="itemAreas" src="img/icon-areaAK.png" alt="Áreas e atrações"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="parkTitle">
+		<div class="row">
+			<div class="col-md-10">
+		<h1>Animal<br>Kingdom</h1>
+	</div>
+	</div>
+	</section>
+
+	
+	
+			    <div class="overlay" id="overlay">
+			      <nav class="overlay-menu">
+			        <ul>
+			          <li><a href="wdw.html"><img src="img/menuWDW.png">Walt Disney World</a></li>
+			          <li><a href="magickingdom.html"><img src="img/menuMK.png">Magic Kingdom</a></li>
+			          <li><a href="epcot.html"><img src="img/menuEPCOT.png">EPCOT</a></li>
+			          <li><a href="hollywoodstudios.html"><img src="img/menuHS.png">Hollywood Studios</a></li>
+			          <li><a href="animalkingdom.html"><img src="img/menuAK.png">Animal Kingdom</a></li>
+			          <div class="menuFooter">
+			          	<li><a href="home.html">Voltar à página inicial</a></li>
+			        </div>
+			        </ul>
+			        
+			      </nav>
+			    </div>
+
+	</div>
+
+
+
+	
+
+
+ 	<script type="text/javascript">
+		
+		$(document).ready(function(){	
+
+			//LOGO ROTATION PAUSE
+			$('.logoRotate, .logoDeck').hover(function(){
+				$('.logoRotate').css('animation-play-state', 'paused');
+				}, function(){
+				$('.logoRotate').css('animation-play-state', 'running');
+			});
+
+			
+			//CHANGE MARGIN BASED ON HEIGHT
+			var alturaBody = $('body').height();
+			console.log("altura body "+alturaBody);
+
+			var triggerMargin = ((alturaBody/2)/2);
+			console.log("altura da margem "+triggerMargin);
+
+			if (alturaBody < 800) {
+				var triggerMargin = ((alturaBody/4)/2);
+				console.log(triggerMargin);	
+			}
+
+			if (alturaBody < 400) {
+				var triggerMargin = (((alturaBody/4)/4)-20);
+				console.log(triggerMargin);	
+			}
+
+
+			$(".menu").css("margin-top", triggerMargin);
+			
+			$(window).resize(function() {
+				var alturaBody = $('body').height();
+				console.log("altura body "+alturaBody);
+
+				var triggerMargin = ((alturaBody/2)/2);
+				console.log("altura da margem "+triggerMargin);
+
+				if (alturaBody < 800) {
+					var triggerMargin = ((alturaBody/4)/2);
+					console.log(triggerMargin);	
+				}
+
+				if (alturaBody < 400) {
+					var triggerMargin = (((alturaBody/4)/4)-20);
+					console.log(triggerMargin);	
+				}
+
+				$(".menu").css("margin-top", triggerMargin);
+			});
+
+			//ALL MENU LINKS WITH CHANGE IN VISIBILITY
+			$('.itemSobre, .sobre').hover(function(){
+				$('#tagSobre').css('visibility', 'visible');
+				}, function(){
+				$('#tagSobre').css('visibility', 'hidden');
+			});
+
+			$('.itemMapa, .mapa').hover(function(){
+				$('#tagMapa').css('visibility', 'visible');
+				}, function(){
+				$('#tagMapa').css('visibility', 'hidden');
+			});
+
+			$('.itemAreas, .areas').hover(function(){
+				$('#tagAreas').css('visibility', 'visible');
+				}, function(){
+				$('#tagAreas').css('visibility', 'hidden');
+			});
+
+
+
+			var positionRight = $(".container").css("right");
+
+			console.log(positionRight);
+
+			//TRY TAKING THE MARGIN-RIGHT FROM CONTAINER AND APPLYING THE VALUE TO RIGHT ON BUTTON CONTAINER
+
+			//MENU TRIGGER
+			$('#toggle').click(function() {
+			   $(this).toggleClass('active');
+			   $('#overlay').toggleClass('open');
+			});
+
+
+		});
+
+
+
+	</script>
+
+	</body>
+</html>
+
