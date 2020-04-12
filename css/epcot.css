@@ -1,0 +1,376 @@
+body {
+	height: 100vh;
+	background: #9c3a8b url('../img/epcot3.png') no-repeat fixed;
+	background-size: 100vh; 
+	background-position: 40% bottom;
+  overflow: hidden;
+}
+
+.headerUp {
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+	width: 60px;
+}
+
+.logoRotate {
+	animation: logoRotate 15000ms linear infinite;
+}
+
+@keyframes logoRotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.logoDeck {
+    width: 110px !important;
+    padding-left: 10px;
+}
+
+.logo a {
+	text-decoration: none;
+}
+
+.menu {
+	display: flex;
+	justify-content: flex-end;
+	/*margin-right: 103px;*/
+}
+
+.menu {
+	height: 0;
+	overflow: visible;
+}
+
+.menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu ul img {
+	max-width: 70px;
+	margin-bottom: 20px;
+}
+
+.tag {
+	float: left;
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 10px;
+	width: 150px;
+	text-align: center;
+	height: 70px;
+	margin-right: -47px;
+	padding-right: 47px;
+	visibility: hidden;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+}
+
+.small-tag {
+  display: none;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: #000;
+}
+
+*:focus {
+	outline: none;
+}
+
+.parkTitle h1 {
+	font-family: 'Fredoka One', sans-serif;
+	color: #fff;
+	font-size: 130px;
+	line-height: 1;
+	text-shadow: -1px 2px 1px rgba(150, 150, 150, 0.5);
+}
+
+
+
+
+/* CRIAÇÃO DO MENU*/
+
+.button_container {
+  position: absolute;
+  margin-top: 20px;
+  height: 25px;
+  width: 35px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+
+.button_container:hover {
+  opacity: 0.7;
+}
+.button_container.active .top {
+  transform: translateY(11px) translateX(0) rotate(45deg);
+  background: #fff;
+}
+.button_container.active .middle {
+  opacity: 0;
+  background: #fff;
+}
+.button_container.active .bottom {
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: #fff;
+}
+
+.button_container span {
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.button_container span:nth-of-type(2) {
+  top: 11px;
+}
+.button_container span:nth-of-type(3) {
+  top: 22px;
+}
+
+.overlay {
+  position: fixed;
+  background: #7e1a6d;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+
+.overlay.open {
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+}
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.overlay nav {
+  position: relative;
+  height: 60%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-family: "Fredoka One", sans-serif;
+  text-align: right;
+  padding-right: 120px;
+}
+
+.overlay .menuFooter {
+	font-size: 24px;
+}
+
+.menuFooter li {
+	min-height: 20px !important; 
+}
+
+.overlay-menu .active {
+	color: #ced0d2;
+}
+
+.overlay-menu img {
+	max-width: 45px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 5);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+}
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+.overlay ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: #fff;
+  transition: 0.35s;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+
+
+/* ----------------- MEDIA QUERIES -------------------- */
+
+
+/* ------- very small screens ------- */
+
+@media screen and (max-width: 320px) {
+
+}
+
+/* ------- landscape phone -------- */
+
+@media screen and (max-width: 767px) and (orientation:landscape) {
+  .overlay nav {
+    padding-right: 100px !important;
+  }
+
+  .small-tag {
+    width: 200px !important;
+    height: auto !important;
+    line-height: 24px !important;
+  }
+
+    .menu img {
+    visibility: hidden;
+    display: none;
+  }
+
+
+}
+
+/* ------- geral -------- */
+
+@media screen and (max-width: 1200px) {
+
+  .small-tag {
+    float: left;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    background-color: rgba(156, 58, 139,.7);
+    padding: 4px;
+    margin-right: 8px;
+    border-radius: 12.6px;
+    width: 100px;
+    height: 55px;
+  }
+
+  .tag {
+    display: none;
+  }
+
+
+
+}
+
+
+/* ------- phone --------- */
+
+@media screen and (max-width: 767px) {
+  .logoRotate {
+    width: 50px !important;
+  }
+
+  .logoDeck {
+    width: 100px !important;
+  }
+
+  .overlay nav {
+    font-size: 22px;
+    padding-right: 20px;
+  }
+
+  .overlay ul li {
+    height: calc(100% / 6);
+  }
+
+  .overlay .menuFooter {
+    font-size: 18px;
+  }
+
+  .parkTitle h1 {
+    font-size: 60px;
+  }
+
+  .button_container {
+    margin-top: 10px;
+  }
+
+  .headerUp {
+    height: 100px;
+  }
+
+  .parkTitle {
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .menu ul img {
+    width: 55px;
+  }
+
+}
+
+/* ------- tablet --------- */
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+
+  .parkTitle h1 {
+    font-size: 100px;
+  }
+
+}
+
