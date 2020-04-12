@@ -1,0 +1,461 @@
+body {
+	height: 100vh;
+	background: #c94445 url('../img/magic-kingdom4.png') no-repeat fixed;
+	background-size: 100vh; 
+	background-position: 40% bottom;
+	animation: backgroundChange 40000ms ease infinite;
+	/*overflow: hidden;*/
+}
+
+@keyframes backgroundChange {
+	0%, 20% {
+		background: #c94445  url('../img/magic-kingdom4.png') no-repeat fixed;
+		background-size: 100vh; 
+		background-position: 40% bottom;
+	}
+
+	25%, 45%{
+		background: #c94445  url('../img/epcot3.png') no-repeat fixed;
+		background-size: 100vh; 
+		background-position: 45% bottom;
+	}
+
+	50%, 70% {
+		background: #c94445  url('../img/hollywood-studios3.png') no-repeat fixed;
+		background-size: 100vh; 
+		background-position: 43% bottom;
+	}
+
+	75%, 95% {
+		background: #c94445  url('../img/animal-kingdom3.png') no-repeat fixed;
+		background-size: 100vh; 
+		background-position: 40% bottom;
+	}
+}
+
+.logo img {
+	margin-top: 30px;
+	width: 60px;
+}
+
+.logoDeck {
+	width: 110px !important;
+	padding-left: 10px;
+}
+
+.logoRotate {
+	animation: logoRotate 15000ms linear infinite;
+}
+
+@keyframes logoRotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.logo a {
+	text-decoration: none;
+}
+
+
+.menu {
+	display: flex;
+	justify-content: flex-end;
+	/*margin-right: 103px;*/
+}
+
+.menu {
+	height: auto;
+	overflow: hidden;
+}
+
+.menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu ul img {
+	max-width: 70px;
+	margin-bottom: 20px;
+}
+
+.tag {
+	float: left;
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 10px;
+	width: 150px;
+	text-align: center;
+	height: 70px;
+	margin-right: -47px;
+	padding-right: 47px;
+	visibility: hidden;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+}
+
+.small-tag {
+	display: none;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: #000;
+}
+
+footer ul {
+	margin: 0;
+	padding: 0;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 20px;
+}
+
+footer a {
+	text-decoration: none;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: none;
+	padding: 4px;
+	animation: footerHoverOut 500ms;
+
+}
+
+footer a:hover {
+	text-decoration: none;
+	color: #000;
+	background-color: #fff;
+	animation: footerHover 500ms;
+}
+
+@keyframes footerHoverOut {
+	0% {
+		background-color: #fff;
+		color: #000;
+	}
+
+	100% {
+		background-color: none;
+		color: #fff;
+	}
+}
+
+@keyframes footerHover {
+	0% {
+		background-color: none;
+		color: #fff;
+	}
+
+	100% {
+		color: #000;
+		background-color: #fff;
+
+	}
+}
+
+footer li {
+	list-style: none;
+}
+
+
+/* CHANGES FOR MODALS */
+
+.modal-header {
+	border-bottom: none;
+}
+
+.modal-content {
+	height: 500px;
+	overflow: auto;
+}
+
+.nav-tabs {
+	border-bottom: 1px solid #c94445;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #fff;
+	background-color: #c94445;
+}
+
+.modal .nav a {
+	color: #000;
+}
+
+.nav-link {
+	padding: 0.5rem 2rem;
+}
+
+*:focus {
+	outline: none;
+}
+
+
+.modal-header {
+	display: inline-block;
+}
+
+.nav {
+	float: left;
+}
+
+.modal-body {
+	padding: 0 16px;
+}
+
+#contato, #roteiro {
+	margin-left: 20px;
+}
+
+
+#contato h2, #roteiro h2 {
+	font-weight: 700;
+	font-size: 18px;
+	color: #c94445;
+	margin-top: 5px;
+}
+
+#contato h4, #roteiro h4 {
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+#contato input, #roteiro input {
+	width: 40%;
+	background-color: #e4e4e4;
+	border: 1px solid #bbbbbb;
+	padding: 0 5px;
+}
+
+#contato textarea, #roteiro textarea {
+	width: 70%;
+	height: 120px;
+	background-color: #e4e4e4;
+	border: 1px solid #bbbbbb;
+	padding: 0 5px;
+}
+
+#contato button, #roteiro button {
+	display: block;
+	margin: 20px 0;
+	background-color: #c94445;
+	border: none;
+	padding: 4px 30px;
+	color: #fff;
+	border-radius: 20px;
+	transition: background-color 200ms;
+}
+
+#contato button:hover, #roteiro button:hover {
+	background-color: #9d1f20;
+}
+
+#roteiro h5 {
+	font-size: 12px;
+}
+
+#roteiro input[type="number"] {
+	width: 50px;
+}
+
+#roteiro input[type="checkbox"] {
+	width: 20px;
+	margin-top: 20px;
+}
+
+#roteiro p {
+	font-size: 10px;
+	font-style: italic;
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: gray;
+}
+
+
+
+.swal-button {
+  background-color: #c94445;
+  border: 1px solid #9d1f20;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-button:hover {
+	background-color: #9d1f20;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 12.6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+/* ----------------- MEDIA QUERIES -------------------- */
+
+
+/* ------- very small screens ------- */
+
+@media screen and (max-width: 320px) {
+	.menu {
+		margin-top: 12px !important;
+	}
+}
+
+/* ------- landscape phone -------- */
+
+@media screen and (max-width: 767px) and (orientation:landscape) {
+	.menu img {
+		visibility: hidden;
+		display: none;
+	}
+
+	.menu {
+		margin-top: 0 !important;
+	}
+
+	.small-tag {
+		width: 200px !important;
+		height: auto !important;
+		line-height: 24px !important;
+	}
+
+	.close {
+		display: inline-block;
+	}
+}
+
+/* ------- geral -------- */
+
+@media screen and (max-width: 1200px) {
+	.tag {
+		display: none;
+	}
+
+	.small-tag {
+		float: left;
+		display: inline-block;
+		font-size: 14px;
+		text-align: center;
+		color: #fff;
+		margin-bottom: 12px;
+		font-weight: bold;
+		font-family: 'Nunito', sans-serif;
+		background-color: rgba(201,68,69,.5);
+		padding: 4px;
+		margin-right: 8px;
+		border-radius: 12.6px;
+		width: 100px;
+		height: 55px;
+	}
+
+	footer {
+		display: inline-block;
+	}
+
+	.menu {
+		display: flex;
+		align-items: center;
+	}
+
+}
+
+
+/* ------- phone --------- */
+
+@media screen and (max-width: 767px) {
+	.logoRotate {
+		width: 50px !important;
+	}
+
+	.logoDeck {
+		width: 100px !important;
+	}
+
+	body {
+		overflow: hidden;
+	}
+
+	.menu ul img {
+		width: 55px;
+	}
+
+	.nav-tabs .nav-link {
+		border-radius: .25rem;
+	}
+
+	.nav-tabs {
+		padding-bottom: 10px;
+	}
+
+	.nav {
+		display: block;
+		float: left;
+		width: 90%;
+	}
+
+	.nav a {
+		text-align: center;
+	}
+
+	nav {
+		width: 99%;
+	}
+
+	button.close {
+		padding:0;
+	}
+
+	#contato input, #roteiro input {
+		width: 90%;
+		background-color: #e4e4e4;
+		border: 1px solid #bbbbbb;
+		padding: 0 5px;
+	}
+
+#contato textarea, #roteiro textarea {
+	width: 90%;
+	height: 150px;
+}
+}
+
+/* ------- tablet --------- */
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+
+	.logoRotate {
+		width: 80px !important;
+	}
+
+	.logoDeck {
+		width: 120px !important;
+	}
+
+	.menu ul img {
+		width: 120px !important;
+	}
+
+
+
+}
